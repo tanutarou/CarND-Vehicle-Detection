@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 [car_not_car]: ./output_images/car_not_car.png
 [hog]: ./output_images/hog.png
-[window]: ./output_images/windows.png
+[window]: ./output_images/window.png
 [heat1]: ./output_images/heat1.png
 [heat2]: ./output_images/heat2.png
 [heat3]: ./output_images/heat3.png
@@ -29,6 +29,7 @@ The goals / steps of this project are the following:
 [test4]: ./output_images/test4.png
 [test5]: ./output_images/test5.png
 [test6]: ./output_images/test6.png
+[hidden_car]: ./output_images/hide_car.png
 [video1]: ./output_videos/project_video.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
@@ -132,7 +133,8 @@ heatmap| resuling bouding boxes|
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
-* My pipeline cannot detect a partially hidden car like below. I think the reason is that cars in training data don't hide like this. So, I need to collect more data or make hidden cars data. Making the data is easy.
+* My pipeline cannot detect a partially hidden car like below. I think the reason is that cars in training data don't hide like this. So, I need to collect more data or make hidden cars data. Making the data is easy by cropping car image.  
+
 ![alt text][hidden_car]
 
 * Though my SVC got 0.9881 test accuracy, false positives are little too much. So, I used time-series information. But, it's not sufficient to cope this problem. I think `project_video.wmv` has different road freature from training dataset. If I collect more data and train it, my pipeline may be improved.
