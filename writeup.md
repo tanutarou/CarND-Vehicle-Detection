@@ -17,6 +17,7 @@ The goals / steps of this project are the following:
 [car_not_car]: ./output_images/car_not_car.png
 [hog]: ./output_images/hog.png
 [window]: ./output_images/window.png
+[out_window]: ./output_images/output_window.png
 [heat1]: ./output_images/heat1.png
 [heat2]: ./output_images/heat2.png
 [heat3]: ./output_images/heat3.png
@@ -81,9 +82,11 @@ I used various combination of scales and search region. I decided it as below ta
 [350, 590]|3.0|
 
 
-The below image shows all search windows.
+The below image shows all search windows and detected window.
 
 ![alt text][window]
+
+![alt text][out_window]
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
