@@ -56,12 +56,12 @@ Here is an example using the `RGB` color space and HOG parameters of `orientatio
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and evaluated them by test accuracy. I choiced `orientations=11`, `pixels_per_cell=(16, 16)`, `cell_per_block=(2, 2)` in YCrCb colorspace. My model with this parameter got nice test accuracy 0.9881.
+I tried various combinations of parameters and evaluated them by test accuracy. I choiced `orientations=11`, `pixels_per_cell=(16, 16)`, `cell_per_block=(2, 2)` in YCrCb colorspace. Because, I thought orientation information is so important to detect cars. So I selected large number of orientations and pixels_per_cell. I checked my suppose by evaluating  test accuracy 0.9881.
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
 The code for this step ins contained in the 7th code cell of the `solution.ipynb`.
-I trained a linear SVM using feature which contains hog feature(all channel), color histogram features and spatial features. I used bins of histogram is 8 and `spatial_size=(8, 8)`.
+I trained a linear SVM using feature which contains hog feature(all channel), color histogram features and spatial features. I used bins of histogram is 8 and `spatial_size=(8, 8)`. This feature contains three type of feature. So I needed to scale to zero mean and unit variance.
 And I choiced SVM's parameter `C=0.1`.
 
 ### Sliding Window Search
@@ -71,7 +71,7 @@ And I choiced SVM's parameter `C=0.1`.
 The code for Hog sub-sampling window search is contained in the 8th code cell of the `solution.ipynb`. This code is dupulicate of lesson 23.
 I used 2 cells to step instead of using overlap rate and 64 as sampling rate. It means overlap of 75%.
 
-I used various combination of scales and search region. I decided it as below table. There are many scale cars in an image. So, trying many setting was very important.
+I used various combination of scales and search region. I decided it as below table. There are many scale cars in an image. So, trying many setting was very important. And limitting search region make little detection error rate. 
 
 [y_start, y_end]|scale|
 ----------------|-----|
